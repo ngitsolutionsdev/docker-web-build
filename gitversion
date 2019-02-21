@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ $1 == '--get-var' ]]
+then
+   gitversion | jq -r ".$2"
+else
+   mono /opt/GitVersion/GitVersion.exe "$@"
+fi
